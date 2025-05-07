@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* default (light) variables become your “dark” look */
+    :root {
+      --background: #000000;
+      --foreground: #ffffff;
+      --muted-foreground: #bbbbbb;
+      /* …and any other --* CSS variables your ui kit uses… */
+    }
+  
+    /* when .dark is present, swap back to a light look */
+    .dark {
+      --background: #ffffff;
+      --foreground: #000000;
+      --muted-foreground: #666666;
+    }
+  
+    /* make sure body actually uses these vars */
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+  
